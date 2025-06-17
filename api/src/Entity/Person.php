@@ -4,6 +4,8 @@ namespace App\Entity;
 
 class Person
 {
+    private ?string $id = null;
+
     private ?string $firstName = null;
 
     private ?string $lastName = null;
@@ -12,7 +14,17 @@ class Person
 
     private ?string $email = null;
 
-    private ?string $id = null;
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(?string $id): static
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     public function getFirstName(): ?string
     {
@@ -60,10 +72,5 @@ class Person
         $this->email = $email;
 
         return $this;
-    }
-
-    public function getId(): ?string
-    {
-        return $this->id;
     }
 }
