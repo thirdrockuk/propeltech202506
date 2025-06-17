@@ -4,7 +4,7 @@
     <id name="id" type="string" length="36"/>
     <field name="firstName" type="string" length="100" nullable="false"/>
     <field name="lastName" type="string" length="100" nullable="false"/>
-    <field name="phone" type="string" length="10" nullable="false"/>
+    <field name="phone" type="string" length="11" nullable="false"/>
     <field name="email" type="text" length="100" nullable="false"/>
   </entity>
 </doctrine-mapping>

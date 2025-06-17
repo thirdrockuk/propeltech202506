@@ -9,7 +9,7 @@ class PersonTest extends ApiTestCase
     private array $testPersonValid = [
         'firstName' => 'David',
         'lastName' => "Platt",
-        'phone' => '0191347823',
+        'phone' => '01913478234',
         'email' => 'david.platt@corrie.co.uk',
     ];
 

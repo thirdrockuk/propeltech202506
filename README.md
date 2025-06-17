@@ -48,3 +48,8 @@ This is a barebones Symfony API Platform implementation with one business class
     - Item PUT: `PUT http://localhost/persons/:id`
     - Item DELETE: `DELETE http://localhost/persons/:id`
   - One of the tests fails, but with a 500 server error rather than a 422 response
+
+### Step 5: `Person` phone propery was too short at 10 characters
+- Updated `phone` to 11 characters, migration automatically generated
+- Updated test to test for 11 characters
+- Fixed the failing 500 test by adding more validation, so that a 422 response is received.

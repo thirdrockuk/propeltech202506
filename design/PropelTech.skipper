@@ -5,7 +5,7 @@
       <field name="id" type="string" size="36" required="true" unique="true" primary="true" uuid="6133b8ed-25ab-49de-abe1-2326c6d88cf0"/>
       <field name="firstName" type="string" size="100" required="true" uuid="d014232a-50f8-4739-a7c8-915451a7d272"/>
       <field name="lastName" type="string" size="100" required="true" uuid="b46b6145-2ebc-432c-9075-90b06450e915"/>
-      <field name="phone" type="string" size="10" required="true" uuid="1b2ec701-aec6-4ba9-a7ed-65359967125e"/>
+      <field name="phone" type="string" size="11" required="true" uuid="1b2ec701-aec6-4ba9-a7ed-65359967125e"/>
       <field name="email" type="text" size="100" required="true" uuid="40c9d32d-12b1-4e12-8f35-eebab69b2aaa"/>
     </entity>
     <orm-attributes>

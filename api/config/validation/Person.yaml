@@ -2,10 +2,18 @@ App\Entity\Person:
     properties:
         firstName:
             - NotBlank: ~
+            - Length:
+                max: 100
         lastName:
             - NotBlank: ~
+            - Length:
+                max: 100
         phone:
             - NotBlank: ~
+            - Length:
+                max: 11
         email:
             - NotBlank: ~
             - Email: ~
+            - Length:
+                max: 100
