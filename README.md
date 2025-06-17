@@ -25,3 +25,12 @@ This is a barebones Symfony API Platform implementation with one business class
 - Remove the default migration and Greetings entity.
 - **OUTCOME**
   - A reconfigured Symfony API Platform is available at http://localhost
+
+### Step 3: Create the business model in Skipper
+- `Person` business class
+- Generate entity: `sudo docker compose exec php php bin/console make:entity --regenerate`
+- Generate Postgres schema: although the task does not ask for database persistence, I thought it worthwhile to show how API Platform helps here:
+  - `sudo docker compose exec php php bin/console doctrine:migrations:diff`
+  - `sudo docker compose exec php php bin/console doctrine:migrations:migrate`
+- **OUTCOME**
+  - Business model design/entity and Postgres database schema are in-place, but not yet visible via the API.

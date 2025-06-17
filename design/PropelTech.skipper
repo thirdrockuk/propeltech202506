@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<skipper version="3.3.7.1828" mvc="Symfony" orm="Doctrine2" name="White Rose Education" uuid="963f8482-51a9-4925-8dc7-204833bb65dd">
+  <module name="\AppBundle" local-name="AppBundle" namespace="\App\Entity" local-namespace="App\Entity" export-format="Doctrine2Xml" export-path="../api/config/doctrine" uuid="d8238bb6-e44f-47b2-8b66-a01cc56bca4c">
+    <entity name="\App\Entity\Person" local-name="Person" namespace="\App\Entity" uuid="69601951-1f11-4470-a4c7-ad6d85e0d748">
+      <field name="id" type="string" size="36" required="true" unique="true" primary="true" uuid="6133b8ed-25ab-49de-abe1-2326c6d88cf0"/>
+      <field name="firstName" type="string" size="100" required="true" uuid="d014232a-50f8-4739-a7c8-915451a7d272"/>
+      <field name="lastName" type="string" size="100" required="true" uuid="b46b6145-2ebc-432c-9075-90b06450e915"/>
+      <field name="phone" type="string" size="10" required="true" uuid="1b2ec701-aec6-4ba9-a7ed-65359967125e"/>
+      <field name="email" type="text" size="100" required="true" uuid="40c9d32d-12b1-4e12-8f35-eebab69b2aaa"/>
+    </entity>
+    <orm-attributes>
+      <attribute name="filename-format">entity-name-only</attribute>
+      <attribute name="file-suffix">.orm</attribute>
+      <attribute name="db-naming-strategy">underscore-lower</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="69601951-1f11-4470-a4c7-ad6d85e0d748" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="-357" position-y="-954" size-x="0" size-x2="120" size-y="0" size-y2="87"/>
+    <module uuid="d8238bb6-e44f-47b2-8b66-a01cc56bca4c" bg-color="#FEFCE8" position-x="61" position-y="72" size-x="377" size-x2="-29" size-y="988" size-y2="-850"/>
+    <project uuid="963f8482-51a9-4925-8dc7-204833bb65dd" size-x="366" size-x2="6204" size-y="966" size-y2="1642"/>
+  </visual-data>
+</skipper>
