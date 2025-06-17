@@ -1,5 +1,7 @@
 resources:
     App\Entity\Person:
+        provider: App\State\PersonProvider
+        processor: App\State\PersonProcessor
         operations:
             person_collection_get:
                 class: ApiPlatform\Metadata\GetCollection

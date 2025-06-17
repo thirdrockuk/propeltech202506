@@ -53,3 +53,8 @@ This is a barebones Symfony API Platform implementation with one business class
 - Updated `phone` to 11 characters, migration automatically generated
 - Updated test to test for 11 characters
 - Fixed the failing 500 test by adding more validation, so that a 422 response is received.
+
+### Step 6: So far so good, but to this point we've been using Postgres for storage
+- The requirement is for data to be stored in a JSON flat file.
+- With API Platform, that's easy to resolve via state providers/processors and a different type of repository which reads from a JSON text file
+- The tests continue to pass, and there is a new unit test for the part of the new storage mechanism
