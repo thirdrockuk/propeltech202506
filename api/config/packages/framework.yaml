@@ -13,6 +13,16 @@ framework:
     #esi: true
     #fragments: true
 
+    # PropelTech
+    serializer:
+        mapping:
+            paths:
+                - "%kernel.project_dir%/config/serialization"
+    validation:
+        mapping:
+            paths:
+                - "%kernel.project_dir%/config/validation"
+
 when@test:
     framework:
         test: true

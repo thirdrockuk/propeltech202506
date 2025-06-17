@@ -9,3 +9,9 @@ api_platform:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+        standard_put: true # Added for PropelTech
+    # Added for PropelTech
+    mapping:
+        paths:
+            - '%kernel.project_dir%/config/api_platform'
+    path_segment_name_generator: api_platform.metadata.path_segment_name_generator.dash
