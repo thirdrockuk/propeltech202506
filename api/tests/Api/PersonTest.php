@@ -7,8 +7,8 @@ use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 class PersonTest extends ApiTestCase
 {
     private array $testPersonValid = [
-        'firstName' => 'David',
-        'lastName' => 'Platt',
+        'first_name' => 'David',
+        'last_name' => 'Platt',
         'phone' => '01913478234',
         'email' => 'david.platt@corrie.co.uk',
     ];
@@ -104,7 +104,7 @@ class PersonTest extends ApiTestCase
 
         // PUT the first Person (change name from David to Dave)
         $personData = $this->testPersonValid;
-        $personData['firstName'] = 'Dave';
+        $personData['first_name'] = 'Dave';
         static::createClient()->request('PUT', '/persons/'.$firstId, [
             'headers' => [
                 'Content-Type' => 'application/ld+json',

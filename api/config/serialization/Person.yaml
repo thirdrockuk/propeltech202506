@@ -7,6 +7,7 @@ App\Entity\Person:
                 - person_item_get.read
                 - person_item_put.read
         firstName:
+            serialized_name: first_name
             groups:
                 - person_collection_get.read
                 - person_collection_post.read
@@ -15,6 +16,7 @@ App\Entity\Person:
                 - person_item_put.read
                 - person_item_put.write
         lastName:
+            serialized_name: last_name
             groups:
                 - person_collection_get.read
                 - person_collection_post.read

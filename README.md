@@ -65,3 +65,7 @@ This is a barebones Symfony API Platform implementation with one business class
 - Refactored all warnings
 - `sudo docker exec -it propeltech-php-1 /bin/bash`
 - `PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix`
+
+### Step 8: Checking back with the spec, field names should be snake_case, not camelCase
+- Changed the serialised name on firstName and lastName
+- Updated the tests to work with snake_case
