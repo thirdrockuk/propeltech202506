@@ -1,0 +1,36 @@
+resources:
+    App\Entity\Person:
+        operations:
+            person_collection_get:
+                class: ApiPlatform\Metadata\GetCollection
+                uriTemplate: /persons
+                normalizationContext:
+                    groups:
+                        - person_collection_get.read
+            person_collection_post:
+                class: ApiPlatform\Metadata\Post
+                uriTemplate: /persons
+                normalizationContext:
+                    groups:
+                        - person_collection_post.read
+                denormalizationContext:
+                    groups:
+                        - person_collection_post.write
+            person_item_get:
+                class: ApiPlatform\Metadata\Get
+                uriTemplate: /persons/{id}
+                normalizationContext:
+                    groups:
+                        - person_item_get.read
+            person_item_put:
+                class: ApiPlatform\Metadata\Put
+                uriTemplate: /persons/{id}
+                normalizationContext:
+                    groups:
+                        - person_item_put.read
+                denormalizationContext:
+                    groups:
+                        - person_item_put.write
+            person_item_delete:
+                class: ApiPlatform\Metadata\Delete
+                uriTemplate: /persons/{id}

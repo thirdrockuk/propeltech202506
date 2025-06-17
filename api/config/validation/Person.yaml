@@ -1,0 +1,11 @@
+App\Entity\Person:
+    properties:
+        firstName:
+            - NotBlank: ~
+        lastName:
+            - NotBlank: ~
+        phone:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~

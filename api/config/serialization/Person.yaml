@@ -1,0 +1,40 @@
+App\Entity\Person:
+    attributes:
+        id:
+            groups:
+                - person_collection_get.read
+                - person_collection_post.read
+                - person_item_get.read
+                - person_item_put.read
+        firstName:
+            groups:
+                - person_collection_get.read
+                - person_collection_post.read
+                - person_collection_post.write
+                - person_item_get.read
+                - person_item_put.read
+                - person_item_put.write
+        lastName:
+            groups:
+                - person_collection_get.read
+                - person_collection_post.read
+                - person_collection_post.write
+                - person_item_get.read
+                - person_item_put.read
+                - person_item_put.write
+        phone:
+            groups:
+                - person_collection_get.read
+                - person_collection_post.read
+                - person_collection_post.write
+                - person_item_get.read
+                - person_item_put.read
+                - person_item_put.write
+        email:
+            groups:
+                - person_collection_get.read
+                - person_collection_post.read
+                - person_collection_post.write
+                - person_item_get.read
+                - person_item_put.read
+                - person_item_put.write

@@ -9,7 +9,7 @@ api_platform:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
-        standard_put: true # Added for PropelTech
+        standard_put: false # Added for PropelTech
     # Added for PropelTech
     mapping:
         paths:

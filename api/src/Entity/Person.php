@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Ramsey\Uuid\Uuid;
+
 class Person
 {
     private ?string $id = null;
@@ -13,6 +15,11 @@ class Person
     private ?string $phone = null;
 
     private ?string $email = null;
+
+    public function __construct()
+    {
+        $this->id = Uuid::uuid4();
+    }
 
     public function getId(): ?string
     {
