@@ -2,8 +2,8 @@
 
 namespace App\Repository;
 
-use App\Entity\Person;
 use App\DataTransformer\PersonDataTransformer;
+use App\Entity\Person;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -29,9 +29,15 @@ class PersonRepository
         }
 
         try {
-            $personsData = json_decode(file_get_contents($this->filePath), true);
-            foreach ($personsData as $personData) {
-                $this->personsDataIndexedOnId[$personData['id']] = $personData;
+            $jsonData = file_get_contents($this->filePath ?? '');
+            if ($jsonData) {
+                $personsData = json_decode($jsonData, true);
+                if (is_iterable($personsData)) {
+                    /** @var array<string,string> $personData */
+                    foreach ($personsData as $personData) {
+                        $this->personsDataIndexedOnId[$personData['id']] = $personData;
+                    }
+                }
             }
         } catch (\Exception $e) {
             $this->personsDataIndexedOnId = [];
@@ -40,12 +46,16 @@ class PersonRepository
 
     private function initialiseStorage(): void
     {
-        file_put_contents($this->filePath, json_encode([]));
+        if (!is_null($this->filePath)) {
+            file_put_contents($this->filePath, json_encode([]));
+        }
     }
 
     private function updateStorage(): void
     {
-        file_put_contents($this->filePath, json_encode(array_values($this->personsDataIndexedOnId)));
+        if (!is_null($this->filePath)) {
+            file_put_contents($this->filePath, json_encode(array_values($this->personsDataIndexedOnId)));
+        }
     }
 
     /**
@@ -83,7 +93,7 @@ class PersonRepository
         $this->personsDataIndexedOnId[$person->getId()] = $personData;
 
         $this->updateStorage();
-        
+
         return $person;
     }
 }

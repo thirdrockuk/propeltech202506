@@ -27,11 +27,11 @@ class PersonDataTransformer
     public function transformToData(Person $person): array
     {
         $personData = [
-            'id' => $person->getId(),
-            'first_name' => $person->getFirstName(),
-            'last_name' => $person->getLastName(),
-            'phone' => $person->getPhone(),
-            'email' => $person->getEmail(),
+            'id' => $person->getId() ?? '',
+            'first_name' => $person->getFirstName() ?? '',
+            'last_name' => $person->getLastName() ?? '',
+            'phone' => $person->getPhone() ?? '',
+            'email' => $person->getEmail() ?? '',
         ];
 
         return $personData;

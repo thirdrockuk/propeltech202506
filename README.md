@@ -58,3 +58,10 @@ This is a barebones Symfony API Platform implementation with one business class
 - The requirement is for data to be stored in a JSON flat file.
 - With API Platform, that's easy to resolve via state providers/processors and a different type of repository which reads from a JSON text file
 - The tests continue to pass, and there is a new unit test for the part of the new storage mechanism
+
+### Step 7: Quality assurance: add PHPStan (max level) and linting
+- `sudo docker compose exec php composer require --dev phpstan/phpstan`
+- `sudo docker compose exec php vendor/bin/phpstan analyse src --level=10`
+- Refactored all warnings
+- `sudo docker exec -it propeltech-php-1 /bin/bash`
+- `PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix`

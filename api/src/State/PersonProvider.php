@@ -2,9 +2,9 @@
 
 namespace App\State;
 
+use ApiPlatform\Metadata\CollectionOperationInterface;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProviderInterface;
-use ApiPlatform\Metadata\CollectionOperationInterface;
 use App\Entity\Person;
 use App\Repository\PersonRepository;
 
@@ -24,6 +24,8 @@ class PersonProvider implements ProviderInterface
             return $this->personRepository->findAll();
         }
 
-        return $this->personRepository->find($uriVariables['id']);
+        $id = isset($uriVariables['id']) && is_string($uriVariables['id']) ? $uriVariables['id'] : null;
+
+        return !is_null($id) ? $this->personRepository->find($id) : null;
     }
 }
